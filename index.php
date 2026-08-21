@@ -1,6 +1,10 @@
 <?php
+// Leggiamo il file json
+$json_object = file_get_contents('./dischi.json');
 
 
+// Salvo la struttura dati presente file tadotta dal json in una variabile
+$dischi = json_decode($json_object);
 ?>
 
 
@@ -32,16 +36,19 @@
         <div class="container">
             <h1>I tuoi brani</h1>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                            <p class="card-text text-center">1999</p>
+                <?php foreach ($dischi as $disco) { ?>
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="<?php echo $disco->url_della_cover ?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $disco->titolo ?></h5>
+                                <p class="card-text"><?php echo $disco->artista ?></p>
+                                <p class="card-text"><?php echo $disco->genere ?></p>
+                                <p class="card-text text-center"><?php echo $disco->anno_di_pubblicazione ?></p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </main>

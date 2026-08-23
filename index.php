@@ -1,10 +1,6 @@
 <?php
 // Leggiamo il file json
-$json_object = file_get_contents('./dischi.json');
-
-
-// Salvo la struttura dati presente file tadotta dal json in una variabile
-$dischi = json_decode($json_object);
+require_once './function.php';
 ?>
 
 
@@ -33,12 +29,12 @@ $dischi = json_decode($json_object);
     </header>
 
     <main>
-        <div class="container">
+        <div class="container bg-dark text-white p-5 mb-4">
             <h1>I tuoi brani</h1>
             <div class="row">
                 <?php foreach ($dischi as $disco) { ?>
                     <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card bg-secondary text-white" style="width: 18rem;">
                             <img src="<?php echo $disco->url_della_cover ?>" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $disco->titolo ?></h5>
@@ -50,6 +46,40 @@ $dischi = json_decode($json_object);
                     </div>
                 <?php } ?>
             </div>
+
+            <div class="container bg-dark text-white mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-12 bg-dark text-white p-5 border border-success border-3 rounded">
+                        <h1 class="h3 mb-4">Aggiungi un brano</h1>
+                        <form action="./server.php" method="POST" class="form-inline mt-3">
+                            <div class="form-group mb-3">
+                                <label for="titolo">Titolo</label>
+                                <input type="text" class="form-control" id="titolo" name="titolo" placeholder="Titolo">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="artista">Artista</label>
+                                <input type="text" class="form-control" id="artista" name="artista" placeholder="Artista">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="genere">Genere</label>
+                                <input type="text" class="form-control" id="genere" name="genere" placeholder="Genere">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="url_della_cover">Url della cover</label>
+                                <input type="url" class="form-control" id="url_della_cover" name="url_della_cover" placeholder="Url della cover">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="anno_di_pubblicazione">Anno di pubblicazione</label>
+                                <input type="number" class="form-control" id="anno_di_pubblicazione" name="anno_di_pubblicazione" placeholder="Anno di pubblicazione">
+                            </div>
+                            <button class="btn btn-success mt-3">Aggiungi</button>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </main>
 

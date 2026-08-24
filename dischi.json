@@ -1,1 +1,16 @@
-[{"titolo":"Song Title","artista":"Artist Name","url_della_cover":"https:\/\/example.com\/cover.jpg","anno_di_pubblicazione":2020,"genere":"Genre"},{"titolo":"Linkin Park","artista":" Linkin Park","genere":"ri Nu metal, Rap rock, Rock","anno_di_pubblicazione":"2000","url_della_cover":"https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcRBwx-bzgvW07lvM4cf2AHQdpBkSv1iadTv1sHuSBOwjg&s=10"}]
+[
+    {
+        "titolo": "Song Title",
+        "artista": "Artist Name",
+        "url_della_cover": "https:\/\/example.com\/cover.jpg",
+        "anno_di_pubblicazione": 2020,
+        "genere": "Genre"
+    },
+    {
+        "titolo": "Linkin Park",
+        "artista": " Linkin Park",
+        "genere": "ri Nu metal, Rap rock, Rock",
+        "anno_di_pubblicazione": "2000",
+        "url_della_cover": "https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcRBwx-bzgvW07lvM4cf2AHQdpBkSv1iadTv1sHuSBOwjg&s=10"
+    }
+]

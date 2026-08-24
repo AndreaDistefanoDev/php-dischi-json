@@ -1,6 +1,7 @@
 <?php
 // Leggiamo il file json
 require_once './function.php';
+$dischi = getDischi();
 ?>
 
 
@@ -33,14 +34,16 @@ require_once './function.php';
             <h1>I tuoi brani</h1>
             <div class="row">
                 <?php foreach ($dischi as $disco) { ?>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-4">
                         <div class="card bg-secondary text-white" style="width: 18rem;">
-                            <img src="<?php echo $disco->url_della_cover ?>" class="card-img-top" alt="...">
+                            <div class="card-img">
+                                <img class="card-img-top w-100" src="<?php echo $disco['url_della_cover'] ?>" alt="...">
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $disco->titolo ?></h5>
-                                <p class="card-text"><?php echo $disco->artista ?></p>
-                                <p class="card-text"><?php echo $disco->genere ?></p>
-                                <p class="card-text text-center"><?php echo $disco->anno_di_pubblicazione ?></p>
+                                <h5 class="card-title"><?php echo $disco['titolo'] ?></h5>
+                                <p class="card-text"><?php echo $disco['artista'] ?></p>
+                                <p class="card-text"><?php echo $disco['genere'] ?></p>
+                                <p class="card-text text-center"><?php echo $disco['anno_di_pubblicazione'] ?></p>
                             </div>
                         </div>
                     </div>
